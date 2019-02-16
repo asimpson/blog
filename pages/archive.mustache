@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  {{> head}}
+  <body>
+    <div class="logo-wrapper pl-max-width">
+      <div class="logo">
+        {{> logo}}
+      </div>
+    </div>
+    <div>
+      <ul class="pl-max-width title-wrapper sp_top">
+        {{#posts}}
+        <li class="post-title sp_lg post-list">
+          <a href="/writing/{{slug}}.html" class="tx-title block sp_none tx-no-underline">{{title}}</a>
+          <div class="post-date">posted {{published}}</div>
+          <div class="post-excerpt">
+            {{{excerpt}}}
+          </div>
+        </li>
+        {{/posts}}
+      </ul>
+      {{#prev}}
+        <a href="/writing/{{prev}}.html">Prev ({{prev}})</a>
+      {{/prev}}
+      {{#next}}
+        <a href="/writing/{{next}}.html">Next ({{next}})</a>
+      {{/next}}
+    </div>
+  </body>
+</html>
