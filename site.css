@@ -13,3 +13,19 @@ pre {
 .logo {
   width: 88px;
 }
+
+article a {
+  color: rgba(0,0,0,.9);
+  opactiy: 1;
+  transition: opacity .15s ease-in;
+}
+
+article a:hover, article a:focus {
+  opacity: .5;
+  transition: opacity .15s ease-in;
+}
+
+article a:active {
+  opacity: .8;
+  transition: opacity .15s ease-out;
+}
