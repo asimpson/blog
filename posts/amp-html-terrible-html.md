@@ -4,7 +4,7 @@
 
 I agree with the first part, but is the answer developing a subset of HTML/JS/CSS?
 
-![](http://imgs.xkcd.com/comics/standards.png)
+![](https://imgs.xkcd.com/comics/standards.png)
 
 ## Update
 
