@@ -1,9 +1,17 @@
-build: site.css cycle
+build: site.css generate
+
+RELEASE = $(shell curl -sL "https://api.github.com/repos/asimpson/cycle/releases/latest" | grep "browser_download_url.*linux" | cut -d : -f 2,3)
 
 cycle:
+	@echo "Downloading cycle..."
+
+	curl -sL $(RELEASE) -o cycle
+	chmod +x cycle
+
+generate:
 	@echo "Building site..."
 	./cycle
-.PHONY: cycle
+.PHONY: generate
 
 clean:
 	@echo "Cleaning..."
