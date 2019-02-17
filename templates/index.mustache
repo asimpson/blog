@@ -2,22 +2,22 @@
 <html class="no-js" lang="en">
   {{> head}}
   <body class="black-90 sans-serif">
-    <div class="logo mb4 mt4 ml4">
+    <div class="logo mv4 ml4">
       {{> logo}}
     </div>
     <div>
-      <ul class="list mw7 pa0 ml4 mr4">
+      <ul class="list mw7 pa0 mh4">
         {{#posts}}
         <li class="mb5">
-          <a href="/writing/{{slug}}.html" class="mb1 b ttu db f4 black no-underline underline-hover">{{title}}</a>
-          <div>{{published}}</div>
-          <div class="mt2">
+          <a href="/writing/{{slug}}.html" class="mb1 b ttu db f4 dark-green no-underline underline-hover">{{title}}</a>
+          <div class="f6">{{published}}</div>
+          <div class="lh-copy mt2 measure-wide">
             {{{excerpt}}}
           </div>
         </li>
         {{/posts}}
       </ul>
-      <div class="ml4"><a class="black-90" href="/writing/2.html">Next</a> →</div>
+      <div class="ml4"><a class="dark-green" href="/writing/2.html">Next</a> →</div>
     </div>
     {{> footer}}
   </body>

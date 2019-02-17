@@ -1,0 +1,41 @@
+pre {
+  background: #212121;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "Hack", "Courier New", "monospace";
+  overflow-y: scroll;
+}
+
+.logo {
+  width: 88px;
+}
+
+.logo svg .circle {
+  fill: #137752;
+}
+
+.logo svg .row {
+  fill: #9EEBCF;
+}
+
+article a {
+  color: #137752;
+  opactiy: 1;
+  transition: opacity .15s ease-in;
+}
+
+article a:hover, article a:focus {
+  opacity: .5;
+  transition: opacity .15s ease-in;
+}
+
+article a:active {
+  opacity: .8;
+  transition: opacity .15s ease-out;
+}
+
+article h2, article h3, article h4 {
+  margin: 0;
+  color: rgba(0,0,0,.9);
+}

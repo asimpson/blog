@@ -9,9 +9,9 @@
       <ul class="list mw7 pa0 ml4 mr4">
         {{#posts}}
         <li class="mb5">
-          <a href="/writing/{{slug}}.html" class="mb1 b ttu db f4 black">{{title}}</a>
-          <div>{{published}}</div>
-          <div class="mt2">
+          <a href="/writing/{{slug}}.html" class="mb1 b ttu db f4 dark-green no-underline underline-hover">{{title}}</a>
+          <div class="f6">{{published}}</div>
+          <div class="measure-wide lh-copy mt2">
             {{{excerpt}}}
           </div>
         </li>
@@ -19,10 +19,10 @@
       </ul>
       <div class="flex">
         {{#prev}}
-          <div class="ml4">← <a class="black-90" href="/writing/{{prev}}.html">Previous</a></div>
+          <div class="ml4">← <a class="dark-green" href="/writing/{{prev}}.html">Previous</a></div>
         {{/prev}}
         {{#next}}
-          <div class="ml4"><a class="black-90" href="/writing/{{next}}.html">Next</a> →</div>
+          <div class="ml4"><a class="dark-green" href="/writing/{{next}}.html">Next</a> →</div>
         {{/next}}
       </div>
     </div>
