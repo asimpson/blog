@@ -1,8 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a0c3b947-b8e8-431c-abe2-6f35d5620575/deploy-status)](https://app.netlify.com/sites/adamsimpsonnet/deploys)
 
-Blog post repo for [adamsimpson.net](https://adamsimpson.net).
-
-
 ## Build
 
 `make` will attempt to build CSS and run a local binary of [cycle](https://github.com/asimpson/cycle) to build the site.
