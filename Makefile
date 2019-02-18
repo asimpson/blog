@@ -15,10 +15,11 @@ generate:
 
 clean:
 	@echo "Cleaning..."
-	rm -f site.css
+	rm site.css
+  rm -rf site/
 .PHONY: clean
 
-site.css: clean
+site.css: tachyons.css custom.css
 	@echo "Building css..."
 	cat tachyons.css > site.css
 	cat custom.css >> site.css
