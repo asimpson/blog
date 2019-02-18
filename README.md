@@ -31,3 +31,6 @@ The JSON files _must have_ a permalink defined.
   "permalink": "/foo/bar",
 }
 ```
+
+![](https://files.adamsimpson.net/robotfail.gif)
+(h/t to [jezen](https://github.com/jezen/jezenthomas.com) for the gif 🎩)
