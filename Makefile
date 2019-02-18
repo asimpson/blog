@@ -16,7 +16,7 @@ generate:
 clean:
 	@echo "Cleaning..."
 	rm site.css
-  rm -rf site/
+	rm -rf site/
 .PHONY: clean
 
 site.css: tachyons.css custom.css
