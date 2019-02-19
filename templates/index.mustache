@@ -5,19 +5,24 @@
     <div class="logo mv4 ml4">
       {{> logo}}
     </div>
-    <div>
-      <ul class="list mw7 pa0 mh4">
+    <div class="black-90 b f2 mw7 mh4 mv5 lh-title">
+      <p>Hiya 👋</p>
+      <p>I'm Adam Simpson and I work on the interwebs at <a class="dark-green dim" href="https://seesparkbox.com">Sparkbox</a> and live life with my wonderful wife Christi and our daughter Ellie.</p>
+    </div>
+    <div class="mw7">
+      <h2 class="black-90 mh4 pa0">Recent Posts</h2>
+      <ul class="list pa0 mh4">
         {{#posts}}
-        <li class="mb5">
-          <a href="/writing/{{slug}}.html" class="mb1 b ttu db f4 dark-green no-underline underline-hover">{{title}}</a>
-          <div class="f6">{{published}}</div>
+        <li class="mb4">
+          <a href="/writing/{{slug}}.html" class="mb1 b db dark-green no-underline underline-hover">{{title}}</a>
+          <div>{{published}}</div>
           <div class="lh-copy mt2 measure-wide">
             {{{excerpt}}}
           </div>
         </li>
         {{/posts}}
       </ul>
-      <div class="ml4"><a class="dark-green" href="/writing/2.html">Next</a> →</div>
+      <div class="ml4"><a class="dark-green" href="/archive">Archive</a> →</div>
     </div>
     {{> footer}}
   </body>
