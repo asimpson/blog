@@ -1,0 +1,8 @@
+{
+  "id": 118,
+  "slug": "introducing-cycle",
+  "title": "Introducing Cycle",
+  "published": "2019-04-05T23:05:17-0400",
+  "modified": "2019-04-05T23:05:17-0400",
+  "excerpt": "Cycle is a half-baked static site-generator that I wrote to publish this here interweb page. Cycle is not really ready for anyone else to use but me at this point. However I wanted to outline my rationale for the various design decisions that inform how Cycle works today."
+}
