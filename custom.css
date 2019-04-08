@@ -48,3 +48,8 @@ article h2, article h3, article h4 {
   margin-right: 2rem;
   width: auto;
 }
+
+.as-mw7 {
+  /* matches .mw7 */
+  max-width: 38rem;
+}
