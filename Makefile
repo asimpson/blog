@@ -23,3 +23,8 @@ site.css: tachyons.css custom.css
 	@echo "Building css..."
 	cat tachyons.css > site.css
 	cat custom.css >> site.css
+
+date:
+	@echo "Copy printed date..."
+	date "+%Y-%m-%dT%H:%M:%S%z"
+.PHONY: date
