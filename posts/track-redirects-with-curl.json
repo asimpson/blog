@@ -1,0 +1,8 @@
+{
+  "id": 123,
+  "published": "2019-10-22T13:25:50-04:00",
+  "title": "Track redirects with curl",
+  "slug": "track-redirects-with-curl",
+  "modified": "2019-10-22T13:25:50-04:00",
+  "excerpt": "I made a bash alias to that takes a URL as an arguement and runs it through curl resuting in the Headers from each redirect, the final URL, and the number of redirects printed to the console."
+}
