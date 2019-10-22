@@ -5,7 +5,7 @@
 
 I wrote in my [previous post announcing](/writing/blog-rewrite) my re-write that I was considering Rust or Common Lisp because those languages allowed me to build a stand alone binary of my site builder. I got some feedback on Twitter that Common Lisp would actually be a good choice:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I’ve read your blog post and solved your problem. There are at least 3 markdown libraries for Common Lisp.<br><br>I’ve checked, one of them – <a href="<https://t.co/UI04NyOjYd>"><https://t.co/UI04NyOjYd></a> has extension to parse GitHub-like code fences: <a href="<https://t.co/KvKZr0RiYk>">pic.twitter.com/KvKZr0RiYk</a></p>&mdash; svetlyak40wt (@svetlyak40wt) <a href="<https://twitter.com/svetlyak40wt/status/1065550535703633920?ref_src=twsrc%5Etfw>">November 22, 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I’ve read your blog post and solved your problem. There are at least 3 markdown libraries for Common Lisp.<br><br>I’ve checked, one of them – <a href="https://t.co/UI04NyOjYd">https://t.co/UI04NyOjYd</a> has extension to parse GitHub-like code fences: <a href="https://t.co/KvKZr0RiYk">pic.twitter.com/KvKZr0RiYk</a></p>&mdash; svetlyak40wt (@svetlyak40wt) <a href="https://twitter.com/svetlyak40wt/status/1065550535703633920?ref_src=twsrc%5Etfw">November 22, 2018</a></blockquote>
 
 I ended up going with Common Lisp and I really enjoyed the experience. Common Lisp has the best REPL I've ever used in any language. It's wonderful to use. Having a good REPL is a key component of not only creating new features but also fixing bugs. Once I had chosen the language it was time to figure out how I wanted my program to consume and build my site.
 
