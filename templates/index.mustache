@@ -12,10 +12,24 @@
       <ul class="list pa0 mh4">
         {{#posts}}
         <li class="mb4">
-          <a href="/writing/{{slug}}" class="mb1 b db dark-green no-underline underline-hover">{{title}}</a>
+          {{^link}}
+            <a href="/writing/{{slug}}" class="mb1 b dark-green no-underline underline-hover">{{title}}</a>
+          {{/link}}
+          {{#link}}
+            <div class="fxlex">
+              <a href="{{link}}" class="mb1 b dark-green no-underline underline-hover">{{title}}</a>
+              <a title="permalink for {{title}}" class="ml1 flex-row no-underline" href="/writing/{{slug}}">🔗</a>
+            </div>
+          {{/link}}
           <div>{{published}}</div>
           <div class="lh-copy mt2 measure-wide">
-            {{{excerpt}}}
+            {{^link}}
+              {{{excerpt}}}
+            {{/link}}
+
+            {{#link}}
+              {{{content}}}
+            {{/link}}
           </div>
         </li>
         {{/posts}}

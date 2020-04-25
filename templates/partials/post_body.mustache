@@ -1,6 +1,11 @@
 <article class="mw7 mh4">
   <div>
-    <h1 class="black mb0">{{title}}</h1>
+    {{#link}}
+      <h1 class="black mb0"><a href="{{link}}">{{title}}</a></h1>
+    {{/link}}
+    {{^link}}
+      <h1 class="black mb0">{{title}}</h1>
+    {{/link}}
     <time class="db f6 mb2 mt2" datetime={{pub_date}}>{{formattedDate}}</time>
     <div class="lh-copy measure-wide">
       {{{content}}}

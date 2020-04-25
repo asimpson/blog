@@ -9,13 +9,26 @@
     {{#posts}}
       <item>
         <title>{{title}}</title>
-        <link>https://adamsimpson.net/writing/{{slug}}</link>
+        {{#link}}
+          <link>{{link}}</link>
+        {{/link}}
+        {{^link}}
+          <link>https://adamsimpson.net/writing/{{slug}}</link>
+        {{/link}}
+
         <guid>https://adamsimpson.net/writing/{{slug}}</guid>
         <pubDate>{{date}}</pubDate>
-        <description>
-          <![CDATA[ {{{excerpt}}} ]]>
-        </description>
-        <content:encoded><![CDATA[ {{{content}}} ]]></content:encoded>
+
+        {{^link}}
+          <description>
+            <![CDATA[ {{{excerpt}}} ]]>
+          </description>
+          <content:encoded><![CDATA[ {{{content}}} ]]></content:encoded>
+        {{/link}}
+
+        {{#link}}
+          <content:encoded><![CDATA[ {{{content}}} <a title="permalink for {{title}}" href="https://adamsimpson.net/writing/{{slug}}">🔗</a> ]]></content:encoded>
+        {{/link}}
       </item>
     {{/posts}}
   </channel>

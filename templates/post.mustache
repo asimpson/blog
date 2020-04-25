@@ -4,14 +4,16 @@
   <body class="black-90 sans-serif">
     {{> header}}
     {{> post_body}}
-    <em class="mt6 db mh4 as-mw7">Comments can be made via the comment box below or by leaving a comment on an issue over at <a class="dark-green dim" href="https://github.com/asimpson/blog-comments">the blog-comments repo</a> with the title of the issue being the path of the post, e.g. <a class="dark-green dim" href="https://github.com/asimpson/blog-comments/issues/1">writing/ajax-and-rails.</a></em>
-    <script src="https://utteranc.es/client.js"
-            repo="asimpson/blog-comments"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
+    {{^link}}
+      <em class="mt6 db mh4 as-mw7">Comments can be made via the comment box below or by leaving a comment on an issue over at <a class="dark-green dim" href="https://github.com/asimpson/blog-comments">the blog-comments repo</a> with the title of the issue being the path of the post, e.g. <a class="dark-green dim" href="https://github.com/asimpson/blog-comments/issues/1">writing/ajax-and-rails.</a></em>
+      <script src="https://utteranc.es/client.js"
+              repo="asimpson/blog-comments"
+              issue-term="pathname"
+              theme="github-light"
+              crossorigin="anonymous"
+              async>
+      </script>
+    {{/link}}
     <footer>
       {{> footer}}
       <script async defer src="/js/twitter-widget.js"></script>

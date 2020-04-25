@@ -7,22 +7,26 @@
       <ul class="list mw7 pa0 ml4 mr4">
         {{#posts}}
         <li class="mb4">
-          <a href="/writing/{{slug}}.html" class="mb1 b db dark-green no-underline underline-hover">{{title}}</a>
+          {{^link}}
+            <a href="/writing/{{slug}}" class="mb1 b dark-green no-underline underline-hover">{{title}}</a>
+          {{/link}}
+          {{#link}}
+            <a href="{{link}}" class="mb1 b dark-green no-underline underline-hover">{{title}}</a>
+            <a title="permalink for {{title}}" class="ml1 flex-row no-underline" href="/writing/{{slug}}">🔗</a>
+          {{/link}}
           <div>{{published}}</div>
           <div class="measure-wide lh-copy mt2">
-            {{{excerpt}}}
+            {{^link}}
+              {{{excerpt}}}
+            {{/link}}
+
+            {{#link}}
+              {{{content}}}
+            {{/link}}
           </div>
         </li>
         {{/posts}}
       </ul>
-      <div class="flex">
-        {{#prev}}
-          <div class="ml4">← <a class="dark-green" href="/writing/{{prev}}.html">Previous</a></div>
-        {{/prev}}
-        {{#next}}
-          <div class="ml4"><a class="dark-green" href="/writing/{{next}}.html">Next</a> →</div>
-        {{/next}}
-      </div>
     </div>
     {{> footer}}
   </body>
