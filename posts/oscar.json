@@ -1,0 +1,8 @@
+{
+  "id": 129,
+  "published": "2020-04-29T16:21:17-04:00",
+  "title": "Introducing oscar",
+  "slug": "oscar",
+  "modified": "2020-04-29T16:21:17-04:00",
+  "excerpt": "I've been working on oscar which is a small command-line utility written in Rust that polls the pbskids.org API for new episodes of any PBS show."
+}
