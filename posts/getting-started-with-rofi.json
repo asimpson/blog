@@ -1,0 +1,8 @@
+{
+  "id": 136,
+  "published": "2020-05-28T13:35:15-04:00",
+  "title": "Getting started with Rofi",
+  "slug": "getting-started-with-rofi",
+  "modified": "2020-05-28T13:35:15-04:00",
+  "excerpt": "I've been using Rofi for about a year but didn't really understand how to write my own scripts for it until recently. In this post I explain what dmenu is and Rofi's implementation of it and also show how to change audio inputs on Linux via pactl."
+}
