@@ -71,3 +71,10 @@ figure {
 video {
   width: 100%;
 }
+
+@media(max-width: 360px) {
+  .nav-link {
+    display: block;
+    margin-top: .5rem;
+  }
+}
