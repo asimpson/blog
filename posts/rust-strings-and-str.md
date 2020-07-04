@@ -90,7 +90,7 @@ This is where it's important to understand the two basic types for strings in Ru
 
 > The String type is the most common string type that has <span class="underline">ownership</span> over the contents of the string. It has a close relationship with its <span class="underline">borrowed</span> counterpart, the primitive str.
 
-Aha, so we're dealing with a `String` here and it sounds like we need a `str`. A quick glance at the `String` doc page again [reveals just the function we need: `to_str`](https://doc.rust-lang.org/std/string/struct.String.html#method.as_str). `to_str` gives us a reference [called a `slice`](https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices) to the value of a `String`. Armed with this new knowledge, here's the solution to this compiler error:
+Aha, so we're dealing with a `String` here and it sounds like we need a `str`. A quick glance at the `String` doc page again [reveals just the function we need: `as_str`](https://doc.rust-lang.org/std/string/struct.String.html#method.as_str). `as_str` gives us a reference [called a `slice`](https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices) to the value of a `String`. Armed with this new knowledge, here's the solution to this compiler error:
 
     struct Example {
         id: String
