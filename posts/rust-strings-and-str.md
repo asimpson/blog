@@ -3,27 +3,27 @@ Rust is a challenging language to work in coming from a more dynamic language li
 
 # Background
 
-First some background about Rust. Rust is a strongly-typed language which means variables and return values from functions usually require a type annotation that looks like this:
+First, some background about Rust. Rust is a strongly-typed language, which means variables and return values from functions usually require a type annotation that looks like this:
 
     let favorite_number: u32 = 12;
 
 The type annotation on the variable `favorite_number` is `u32`. This should look familiar to anyone who has used a strongly typed language before.
 
-A struct in Rust is a way for the user to define any "data type". Here's an example:
+A struct in Rust is a way for the user to define any data type. Here's an example:
 
     struct Config {
       name: String,
       id: u32
     }
 
-Here is how we would do this in Javascript:
+Here is how we would approximate this in Javascript:
 
     const config = {
       name: "Adam",
       id: 4
     }
 
-Notice how in Javascript we use an Object named `config` to hold some config for our application. In Rust we create a `struct` called `Config` and define the various fields we need. Rust is strongly-typed so even the fields in the `Config` struct are type-annotated. Let's move to where I got tripped up.
+Notice how, in Javascript, we use an Object named `config` to hold some config for our application. In Rust, we create a `struct` called `Config` and define the various fields we need. Rust is strongly typed, so even the fields in the `Config` struct are type-annotated. Let's move to where I got tripped up.
 
 
 # Stumped
@@ -39,7 +39,7 @@ I created a `Vector` (a mutable Array data structure) that contained a couple of
         println!("{:?}", example);
     }
 
-So far so good. However I now wanted to `map` over the collection and create a new collection that just contained the `id`. Here's what I tried and what failed:
+So far, so good. However, I now wanted to `map` over the collection and create a new collection that just contained the `id`. Here's what I tried and what failed:
 
     struct Example {
         id: String
@@ -56,7 +56,7 @@ So far so good. However I now wanted to `map` over the collection and create a n
 
 # Understanding the problem
 
-What's happening here? Well the compiler message is instructive:
+What's happening here? Well, the compiler message is instructive:
 
     error[E0507]: cannot move out of `item.id` which is behind a shared reference
       --> src/main.rs:10:59
@@ -68,12 +68,12 @@ What's happening here? Well the compiler message is instructive:
 
     For more information about this error, try `rustc --explain E0507`.
 
-In Rust there is no [Garbage collection](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) (automatic memory management). Instead Rust requires you the programmer to indicate to the Rust compiler [what variables have ownership over the value they represent](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html). If that ownership moves in an invalid way, Rust will throw a compile error to prevent a memory error at runtime. The benefit in not having Garbage Collection is two-fold:
+In Rust there is no [Garbage collection](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) (automatic memory management). Instead, Rust requires you, the programmer, to indicate to the Rust compiler [what variables have ownership over the value they represent](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html). If that ownership moves in an invalid way, Rust will throw a compile error to prevent a memory error at runtime. The benefit in not having Garbage Collection is two-fold:
 
 1. Faster code without a GC process.
 2. Whole classes of bugs are impossible due to Rust's ownership rules.
 
-In our error case, mapping over our vector "moves" the data stored at `id` to a new `Vector`. This shift to a new `Vector` means Rust can no longer guarantee the safety of that portion of memory. Let's look at the documentation around this error code from the compiler.
+In our error case, mapping over our vector moves the data stored at `id` to a new `Vector`. This shift to a new `Vector` means Rust can no longer guarantee the safety of that portion of memory. Let's look at the documentation around this error code from the compiler.
 
 The [explainer page for this error](https://doc.rust-lang.org/stable/error-index.html#E0507) gives us three options:
 
@@ -81,7 +81,7 @@ The [explainer page for this error](https://doc.rust-lang.org/stable/error-index
 > 2.  Somehow reclaim the ownership.
 > 3.  Implement the Copy trait on the type.
 
-\#3 sounded like too much for this specific case. #2 also seemed like the wrong approach because I didn't want to change the ownership, I just wanted a copy or reference to it. #1 was the right answer but how do I avoid moving the variable?
+\#3 sounded like too much for this specific case. #2 also seemed like the wrong approach because I didn't want to change the ownership, I just wanted a copy or reference to it. #1 was the right answer, but how do I avoid moving the variable?
 
 
 # The Solution
@@ -90,7 +90,7 @@ This is where it's important to understand the two basic types for strings in Ru
 
 > The String type is the most common string type that has <span class="underline">ownership</span> over the contents of the string. It has a close relationship with its <span class="underline">borrowed</span> counterpart, the primitive str.
 
-Aha, so we're dealing with a `String` here and it sounds like we need a `str`. A quick glance at the `String` doc page again [reveals just the function we need: `to_str`](https://doc.rust-lang.org/std/string/struct.String.html#method.as_str). `to_str` gives us a reference [called a `slice`](https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices) to the value of a `String`. Armed with this new knowledge, here's the solution to this compiler error:
+Aha, so we're dealing with a `String` here, and it sounds like we need a `str`. A quick glance at the `String` doc page again [reveals just the function we need: `as_str`](https://doc.rust-lang.org/std/string/struct.String.html#method.as_str). `as_str` gives us a reference [called a `slice`](https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices) to the value of a `String`. Armed with this new knowledge, here's the solution to this compiler error:
 
     struct Example {
         id: String
@@ -108,4 +108,4 @@ Aha, so we're dealing with a `String` here and it sounds like we need a `str`. A
 
 # Fin
 
-Rust has proven challenging to learn but I think the journey and difficulty is worth it. Ownership, the type-system, and the excellent performance continue to impress me. I hope this post encourages folks to give Rust a try! I'm happy to answer any questions via the comments or [twitter](https://twitter.com/a_simpson) or wherever else.
+Rust has proven challenging to learn, but I think the journey and difficulty is worth it. Ownership, the type-system, and the excellent performance continue to impress me. I hope this post encourages folks to give Rust a try! I'm happy to answer any questions via the comments or [twitter](https://twitter.com/a_simpson) or wherever else.
