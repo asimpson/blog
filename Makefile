@@ -10,7 +10,7 @@ cycle:
 
 generate:
 	@echo "Building site..."
-	./cycle
+	cycle
 .PHONY: generate
 
 clean:
