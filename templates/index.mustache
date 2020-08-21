@@ -20,7 +20,7 @@
               <a href="{{link}}" class="mb1 b dark-green no-underline underline-hover">{{title}}</a>
             </div>
           {{/link}}
-          <div>{{published}}</div>
+          <div>{{published_pretty}}</div>
           <div class="lh-copy mt2 measure-wide">
             {{^link}}
               {{{excerpt}}}
@@ -37,6 +37,7 @@
       </ul>
       <div class="ml4"><a class="dark-green" href="/archive">Archive</a> →</div>
     </div>
+    {{> openring}}
     {{> footer}}
   </body>
 </html>

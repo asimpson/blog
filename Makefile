@@ -1,4 +1,4 @@
-build: site.css generate
+build: generate
 
 RELEASE = $(shell curl -sL "https://api.github.com/repos/asimpson/cycle/releases/latest" | grep "browser_download_url.*linux" | cut -d : -f 2,3)
 
@@ -8,7 +8,17 @@ cycle:
 	curl -sL $(RELEASE) -o cycle
 	chmod +x cycle
 
-generate:
+openring.mustache:
+	openring \
+	-s https://drewdevault.com/feed.xml \
+	-s https://fasterthanli.me/index.xml \
+	-s https://endler.dev/rss.xml \
+	-s https://inessential.com/xml/rss.xml \
+	-s https://www.bryanbraun.com/rss.xml \
+	< openring.html \
+	> ./templates/partials/openring.mustache
+
+generate: site.css openring.mustache
 	@echo "Building site..."
 	./cycle
 .PHONY: generate
