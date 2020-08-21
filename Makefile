@@ -9,7 +9,7 @@ cycle:
 	chmod +x cycle
 
 openring.mustache:
-	openring \
+	./bin/openring \
 	-s https://drewdevault.com/feed.xml \
 	-s https://fasterthanli.me/index.xml \
 	-s https://endler.dev/rss.xml \
