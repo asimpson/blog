@@ -2,7 +2,7 @@ I've added Drew DeVault's [openring project](https://git.sr.ht/~sircmpwn/openrin
 
 It was pretty easy to integrate into my build system. I added a new `Makefile` task that looks like this:
 
-```
+```make
 openring.mustache:
 	./bin/openring \
 	-s https://drewdevault.com/feed.xml \
