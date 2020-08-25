@@ -34,7 +34,7 @@ To accomplish #1 I needed to get the currently playing input which can be done v
 
 The finished script looks like this:
 
-```
+```shell
 #!/bin/bash
 
 source="$(pactl list short sinks | cut -f 2 | rofi -dpi 1 -dmenu -p "Change audio:")";

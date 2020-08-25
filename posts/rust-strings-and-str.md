@@ -5,23 +5,29 @@ Rust is a challenging language to work in coming from a more dynamic language li
 
 First, some background about Rust. Rust is a strongly-typed language, which means variables and return values from functions usually require a type annotation that looks like this:
 
-    let favorite_number: u32 = 12;
+```rust
+let favorite_number: u32 = 12;
+```
 
 The type annotation on the variable `favorite_number` is `u32`. This should look familiar to anyone who has used a strongly typed language before.
 
 A struct in Rust is a way for the user to define any data type. Here's an example:
 
-    struct Config {
-      name: String,
-      id: u32
-    }
+```rust
+struct Config {
+  name: String,
+  id: u32
+}
+```
 
 Here is how we would approximate this in Javascript:
 
-    const config = {
-      name: "Adam",
-      id: 4
-    }
+```js
+const config = {
+  name: "Adam",
+  id: 4
+}
+```
 
 Notice how, in Javascript, we use an Object named `config` to hold some config for our application. In Rust, we create a `struct` called `Config` and define the various fields we need. Rust is strongly typed, so even the fields in the `Config` struct are type-annotated. Let's move to where I got tripped up.
 
@@ -30,26 +36,30 @@ Notice how, in Javascript, we use an Object named `config` to hold some config f
 
 I created a `Vector` (a mutable Array data structure) that contained a couple of instances of a struct. It looked something like this:
 
-    struct Example {
-        id: String
-    }
+```rust
+struct Example {
+    id: String
+}
 
-    fn main() {
-        let example: Vec<Example> = vec![Example{id: "one".to_string()}, Example{id: "two".to_string()}];
-        println!("{:?}", example);
-    }
+fn main() {
+    let example: Vec<Example> = vec![Example{id: "one".to_string()}, Example{id: "two".to_string()}];
+    println!("{:?}", example);
+}
+```
 
 So far, so good. However, I now wanted to `map` over the collection and create a new collection that just contained the `id`. Here's what I tried and what failed:
 
-    struct Example {
-        id: String
-    }
+```rust
+struct Example {
+    id: String
+}
 
-    fn main() {
-        let example: Vec<Example> = vec![Example{id: "one".to_string()}, Example{id: "two".to_string()}];
-        let map_fail: Vec<String> = example.iter().map(|item| item.id).collect();
-        println!("{:?}", map_fail);
-    }
+fn main() {
+    let example: Vec<Example> = vec![Example{id: "one".to_string()}, Example{id: "two".to_string()}];
+    let map_fail: Vec<String> = example.iter().map(|item| item.id).collect();
+    println!("{:?}", map_fail);
+}
+```
 
 [Rust playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=50f404dd47af19b0f4373fea1f7a3719)
 
@@ -58,15 +68,17 @@ So far, so good. However, I now wanted to `map` over the collection and create a
 
 What's happening here? Well, the compiler message is instructive:
 
-    error[E0507]: cannot move out of `item.id` which is behind a shared reference
-      --> src/main.rs:10:59
-       |
-    10 |     let map_fail: Vec<String> = example.iter().map(|item| item.id).collect();
-       |                                                           ^^^^^^^ move occurs because `item.id` has type `std::string::String`, which does not implement the `Copy` trait
+```shell
+  error[E0507]: cannot move out of `item.id` which is behind a shared reference
+    --> src/main.rs:10:59
+      |
+  10 |     let map_fail: Vec<String> = example.iter().map(|item| item.id).collect();
+      |                                                           ^^^^^^^ move occurs because `item.id` has type `std::string::String`, which does not implement the `Copy` trait
 
-    error: aborting due to previous error
+  error: aborting due to previous error
 
-    For more information about this error, try `rustc --explain E0507`.
+  For more information about this error, try `rustc --explain E0507`.
+```
 
 In Rust there is no [Garbage collection](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) (automatic memory management). Instead, Rust requires you, the programmer, to indicate to the Rust compiler [what variables have ownership over the value they represent](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html). If that ownership moves in an invalid way, Rust will throw a compile error to prevent a memory error at runtime. The benefit in not having Garbage Collection is two-fold:
 
@@ -92,17 +104,19 @@ This is where it's important to understand the two basic types for strings in Ru
 
 Aha, so we're dealing with a `String` here, and it sounds like we need a `str`. A quick glance at the `String` doc page again [reveals just the function we need: `as_str`](https://doc.rust-lang.org/std/string/struct.String.html#method.as_str). `as_str` gives us a reference [called a `slice`](https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices) to the value of a `String`. Armed with this new knowledge, here's the solution to this compiler error:
 
-    struct Example {
-        id: String
-    }
+```rust
+struct Example {
+    id: String
+}
 
-    fn main() {
-        let example: Vec<Example> = vec![Example{id: "one".to_string()}, Example{id: "two".to_string()}];
-        println!("{:?}", example);
+fn main() {
+    let example: Vec<Example> = vec![Example{id: "one".to_string()}, Example{id: "two".to_string()}];
+    println!("{:?}", example);
 
-        let map_str: Vec<&str> = example.iter().map(|item| item.id.as_str()).collect();
-        println!("{:?}", map_str);
-    }
+    let map_str: Vec<&str> = example.iter().map(|item| item.id.as_str()).collect();
+    println!("{:?}", map_str);
+}
+```
 
 [Rust playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=fa5624ee76fbecafbe282de6190b079c)
 
