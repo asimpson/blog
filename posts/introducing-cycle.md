@@ -63,12 +63,14 @@ Over the course of getting a working version of Cycle out the door I wrote a few
 
 The `concatenate` function in Common Lisp is a general purpose function that works over strings as well as lists and other data types. It's typically used like this: `(concatenate 'string "hello" "world")`. Notice that `concatenate` requires that the type of the values to be specified. I didn't like this so I wrote this:
 
-    (defun concat (&rest strings)
-      "Wrapper around the more cumbersome concatenate form."
-      (let (result)
-        (dolist (x strings)
-          (setf result (concatenate 'string result x)))
-        result))
+```common-lisp
+(defun concat (&rest strings)
+  "Wrapper around the more cumbersome concatenate form."
+  (let (result)
+    (dolist (x strings)
+      (setf result (concatenate 'string result x)))
+    result))
+```
 
 `concat` takes any number of strings and uses the `dolist` macro to call `concatenate` on them. It's used like this: `(concat "hello" "world")`. Much better in my opinion.
 
@@ -77,12 +79,14 @@ The `concatenate` function in Common Lisp is a general purpose function that wor
 
 Cycle writes a lot of files. That's pretty much it's main jam. I realized I was writing the same boilerplate to write files all over the place so I wrote a wrapper function:
 
-    (defun write-file (contents file)
-      "Write CONTENTS to FILE."
-      (with-open-file (stream file
-                         :direction :output
-                         :if-exists :supersede)
-        (write-sequence contents stream)))
+```common-lisp
+(defun write-file (contents file)
+  "Write CONTENTS to FILE."
+  (with-open-file (stream file
+                      :direction :output
+                      :if-exists :supersede)
+    (write-sequence contents stream)))
+```
 
 Now I can write a file like this: `(write-file "Hello world" "./hello-world")`.
 
@@ -91,9 +95,11 @@ Now I can write a file like this: `(write-file "Hello world" "./hello-world")`.
 
 The last helper function I want to show is my wrapper around the [`UIOP:split-string`](https://common-lisp.net/project/asdf/uiop.html) function. Much like the `concat` function this mainly avoids extra typing:
 
-    (defun split-string (string sep)
-      "Wrapper around uiop:split-string to avoid keyword typing."
-      (uiop:split-string string :separator sep))
+```common-lisp
+(defun split-string (string sep)
+  "Wrapper around uiop:split-string to avoid keyword typing."
+  (uiop:split-string string :separator sep))
+```
 
 Now I can split a string like this: `(split-string "Hello World" " ")`. Much easier.
 
