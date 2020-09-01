@@ -2,3 +2,4 @@ site
 cycle
 site.css
 /templates/partials/openring.mustache
+netlify*
