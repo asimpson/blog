@@ -29,7 +29,7 @@ clean:
 	rm -rf site/
 .PHONY: clean
 
-site.css: pygments.css tachyons.css custom.css
+site.css: tachyons.css custom.css
 	@echo "Building css..."
 	cat pygments.css > site.css
 	cat tachyons.css >> site.css
