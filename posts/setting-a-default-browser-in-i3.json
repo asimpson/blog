@@ -1,0 +1,8 @@
+{
+  "id": 153,
+  "published": "2020-09-11T00:01:05-0400",
+  "title": "Setting a default browser in i3",
+  "slug": "setting-a-default-browser-in-i3",
+  "modified": "2020-09-11T00:01:05-0400",
+  "excerpt": "Using a desktop manager like GNOME makes setting default applications easy. However when using a tiling window manager like i3 setting a default application is opaque to the newbie such as myself."
+}
