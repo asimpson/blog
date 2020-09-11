@@ -20,7 +20,7 @@ openring.mustache:
 
 generate: site.css openring.mustache
 	@echo "Building site..."
-	./cycle
+	PATH="`pwd`/bin:$$PATH" ./cycle
 .PHONY: generate
 
 clean:
