@@ -55,7 +55,7 @@ Since we're going to replace a grunt task with a npm script task, lets use ES6 g
 
 The code turns out to be fairly succicent:
 
-``` language-javascript
+``` javascript
 import rev from "rev-file";
 import path from "path";
 import fs from "fs-extra";
