@@ -12,7 +12,7 @@ I `curl`ed the page down and pasted the HTML into a buffer in Emacs so I could s
 
 I ended up breaking this functionality out into it's own function since I used it more than once and it was cumbersome to type it all out.
 
-``` language-elisp
+``` elisp
     (defun re-capture-between(re-start re-end)
       "Return the string between two regexes."
       (let (start end)

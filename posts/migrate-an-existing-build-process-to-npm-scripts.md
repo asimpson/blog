@@ -14,7 +14,7 @@ I was using two plugins, [grunt-usemin](https://github.com/yeoman/grunt-usemin) 
 
 For reference here is my old Grunt config:
 
-``` language-coffeescript
+``` coffeescript
  rev:
   files:
     src: ["public/js/browser.js", "public/css/base.css"]
