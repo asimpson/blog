@@ -15,6 +15,7 @@ openring.mustache:
 	-s https://endler.dev/rss.xml \
 	-s https://inessential.com/xml/rss.xml \
 	-s https://www.bryanbraun.com/rss.xml \
+	-s https://macwright.com/rss.xml \
 	< openring.html \
 	> ./templates/partials/openring.mustache
 
