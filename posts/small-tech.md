@@ -1,6 +1,6 @@
 [Jamie Brandon](https://scattered-thoughts.net/) has a nice post about "small tech": tech that isn't backed by a big corporation like Microsoft or Apple but still has an out-sized impact. I love the post and I thought I would add a few additional products to the list.
 
-- [curl](https://curl.haxx.se/) is open-source and has thousands of contributors but is still primarily designed and managed by [@badger (Daniel Stenberg)](https://daniel.haxx.se/). If you ever do anything with http for any kind of development mastering `curl` is worth the time investment.
+- [curl](https://curl.haxx.se/) is open-source and has thousands of contributors but is still primarily designed and managed by [@bagder (Daniel Stenberg)](https://daniel.haxx.se/). If you ever do anything with http for any kind of development mastering `curl` is worth the time investment.
 
 - [git](https://git-scm.com/) is _the_ premier version control system on the planet. It started out as a side-project to manage Linux kernel development.
 
