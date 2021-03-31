@@ -1,0 +1,8 @@
+{
+  "id": 162,
+  "published": "2021-03-31T11:18:24-04:00",
+  "title": "A firewall in 8 lines",
+  "slug": "8-line-firewall",
+  "modified": "2021-03-31T11:18:24-04:00",
+  "excerpt": "You only need about 8 lines in iptables to have a great home firewall."
+}
