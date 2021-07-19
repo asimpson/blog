@@ -67,3 +67,13 @@ video {
     margin-top: .5rem;
   }
 }
+
+aside a {
+  color: #111111;
+  opactiy: 1;
+  transition: opacity .15s ease-in;
+}
+
+aside h3 {
+  font-size: 1.3rem;
+}
