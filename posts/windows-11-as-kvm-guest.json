@@ -1,0 +1,8 @@
+{
+  "id": 165,
+  "published": "2022-02-28T13:39:37-0500",
+  "title": "Windows 11 as KVM guest",
+  "slug": "windows-11-as-kvm-guest",
+  "modified": "2022-02-28T13:39:37-0500",
+  "excerpt": "How I work with Windows 11 as a KVM guest on a NixOS host using virt-manager."
+}
