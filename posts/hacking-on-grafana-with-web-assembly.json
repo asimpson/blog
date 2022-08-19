@@ -1,0 +1,8 @@
+{
+  "id": 169,
+  "published": "2022-08-19T15:10:19-0400",
+  "title": "Hacking on Grafana with Web Assembly",
+  "slug": "hacking-on-grafana-with-web-assembly",
+  "modified": "2022-08-19T15:10:19-0400",
+  "excerpt": "Grafana had a hack week this past week and I opted to work on WebAssembly(WASM)-related things. My vague original idea was to see if I could compile the Grafana server for WASM."
+}
