@@ -15,6 +15,11 @@ stdenv.mkDerivation rec {
     '';
   });
 
+  quicklisp = fetchurl {
+    url = "https://beta.quicklisp.org/quicklisp.lisp";
+    sha256 = "sha256:05rcxg7rrkp925s155p0rk848jp2jxrjcm3q0hbn8wg0xcm5qyja";
+  };
+
   src = fetchFromGitHub {
     owner = "asimpson";
     repo = pname;
@@ -23,7 +28,6 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    curl
     sbclCore
   ];
 
@@ -31,8 +35,7 @@ stdenv.mkDerivation rec {
     export HOME=$out
     mkdir -p $out/ql
     mkdir -p $out/bin
-    curl -kL -o $out/ql/quicklisp.lisp "https://beta.quicklisp.org/quicklisp.lisp"
-    sbcl --load $out/ql/quicklisp.lisp \
+    sbcl --load ${quicklisp} \
          --eval "(quicklisp-quickstart:install :path \"$out/ql/quicklisp\")" \
          --eval "(quit)" && \
     sbcl --load $out/ql/quicklisp/setup.lisp \
@@ -43,4 +46,6 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mv cycle $out/bin
   '';
+
+  dontStrip = true;
 }
