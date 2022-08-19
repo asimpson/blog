@@ -5,7 +5,7 @@ RELEASE = $(shell curl -sL "https://api.github.com/repos/asimpson/cycle/releases
 cycle:
 	@echo "Downloading cycle..."
 
-	curl -sL $(RELEASE) -o cycle
+	curl -sL "https://github.com/asimpson/cycle/releases/download/v0.3.0/cycle-linux" -o cycle
 	chmod +x cycle
 
 openring.mustache:
