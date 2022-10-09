@@ -1,3 +1,6 @@
+<aside class="pa2 bg-light-gray">
+I _finally_ got around to pushing the code ([repo](https://github.com/asimpson/hackathon-2022-08-wasm)) I outline here to a S3 bucket as a demo: [http://wasm-hack-week-2022.s3-website-us-east-1.amazonaws.com](http://wasm-hack-week-2022.s3-website-us-east-1.amazonaws.com)
+</aside>
 [Grafana](https://grafana.com/) had a hack week this past week and I opted to work on WebAssembly(WASM)-related things. My vague original idea was to see if I could compile the Grafana server for WASM.
 
 The original inspiration for this idea came from [Simon Willison’s work with Datasette Lite](https://simonwillison.net/2022/May/4/datasette-lite/). However, compiling Grafana as a WASM binary proved [difficult](https://github.com/golang/go/issues/32548) with existing [build constraints](https://pkg.go.dev/go/build#hdr-Build_Constraints). After spending some time trying to get that to work I changed course a bit and instead focused on compiling a basic `go` HTTP server as a WASM module. The new goal being to have a proof of concept that bundled the HTTP server as a WASM binary and intercepted any clicked links on the page and finally passed those links to be resolved by the `go` server in WASM. 
