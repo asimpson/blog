@@ -11,7 +11,6 @@ cycle:
 openring.mustache:
 	./bin/openring \
 	-s https://drewdevault.com/feed.xml \
-	-s https://fasterthanli.me/index.xml \
 	-s https://endler.dev/rss.xml \
 	-s https://inessential.com/xml/rss.xml \
 	-s https://www.bryanbraun.com/rss.xml \
