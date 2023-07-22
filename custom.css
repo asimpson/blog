@@ -17,7 +17,7 @@ pre {
   fill: #9EEBCF;
 }
 
-p a, blockquote a, article a {
+p a, blockquote a, article a, ul a {
   color: #137752;
   opactiy: 1;
   transition: opacity .15s ease-in;
