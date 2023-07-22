@@ -1,0 +1,8 @@
+{
+  "id": 171,
+  "published": "2023-07-22T11:33:16-0400",
+  "title": "Better scripting with gh",
+  "slug": "better-scripting-with-gh",
+  "modified": "2023-07-22T11:33:16-0400",
+  "excerpt": "I've become a big fan of the `gh` CLI tool from Github. It has eliminated the need for me to manage developer tokens for my scripts."
+}
