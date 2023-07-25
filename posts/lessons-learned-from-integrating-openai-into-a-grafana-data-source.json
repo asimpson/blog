@@ -1,0 +1,8 @@
+{
+  "id": 172,
+  "published": "2023-07-25T15:10:24-04:00",
+  "title": "Lessons learned from integrating OpenAI into a Grafana data source",
+  "slug": "lessons-learned-from-integrating-openai-into-a-grafana-data-source",
+  "modified": "2023-07-25T15:10:24-04:00",
+  "excerpt": "I wrote over on the <a href=\"https://grafana.com/blog/\">Grafana blog</a> about a few <a href=\"https://grafana.com/blog/2023/07/25/lessons-learned-from-integrating-openai-into-a-grafana-data-source/\">lessons or observations we learned while integrating OpenAI into the ADX data source</a>. It's my first post on the Grafana blog and I'm pretty excited, so check it out!"
+}
