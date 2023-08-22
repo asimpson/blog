@@ -15,6 +15,9 @@ openring.mustache:
 	-s https://inessential.com/xml/rss.xml \
 	-s https://www.bryanbraun.com/rss.xml \
 	-s https://macwright.com/rss.xml \
+	-s https://jvns.ca/atom.xml \
+	-s https://michael.stapelberg.ch/feed.xml \
+	-s https://simonwillison.net/atom/everything \
 	< openring.html \
 	> ./templates/partials/openring.mustache
 
