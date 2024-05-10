@@ -4,17 +4,6 @@ stdenv.mkDerivation rec {
   pname = "cycle";
   version = "v0.3.0";
 
-  sbclCore = sbcl.overrideAttrs (oldAttrs: rec {
-    enableFeatures = oldAttrs.enableFeatures ++ ["sb-core-compression"];
-    buildInputs = oldAttrs.buildInputs ++ [zlib];
-    sbclBootstrapHost = "${sbclBootstrap}/bin/sbcl --disable-debugger --no-userinit --no-sysinit";
-    buildPhase = ''
-      runHook preBuild
-      sh make.sh --prefix=$out --xc-host="${sbclBootstrapHost}" ${if stdenv.hostPlatform.system == "aarch64-darwin" then "--arch=arm64" else ""} "--with-sb-core-compression"
-      runHook postBuild
-    '';
-  });
-
   quicklisp = fetchurl {
     url = "https://beta.quicklisp.org/quicklisp.lisp";
     sha256 = "sha256:05rcxg7rrkp925s155p0rk848jp2jxrjcm3q0hbn8wg0xcm5qyja";
@@ -28,7 +17,7 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    sbclCore
+    sbcl
   ];
 
   preBuild = ''
