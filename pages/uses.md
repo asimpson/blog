@@ -8,7 +8,7 @@ At work I use a [desktop workstation](/writing/new-workstation) running [NixOS](
 
 I love typing on my <s>[Anne Pro](https://www.amazon.com/Anne-PRO-Mechanical-Keyboard-Programmable/dp/B07J4HH6YZ)</s> [GMMK Pro](https://www.pcgamingrace.com/products/glorious-gmmk-pro-75-barebone-black) mechanical keyboard with Gazzew U4 Boba switches for a quieter feel.
 
-My phone is an iPhone 14 it's fine.
+My phone is an iPhone 14. It's fine.
 
 **And what software?**
 
@@ -24,7 +24,7 @@ I enjoy writing code in [Javascript/Node](https://nodejs.org/en/), [Golang](http
 
 **Any online services?**
 
-As far as online services go I use [Netlify](https://www.netlify.com) (at the moment) to host this site, [Hover](https://hover.com/U84GCox3) for domains, [Fastmail](https://www.fastmail.com/?STKI=14274077) for email, [feedbin](https://feedbin.com)(rip Feedwrangler) manages my RSS feeds, [Pinboard](https://pinboard.in/u:asimpson) is my online trapper keeper, and I use [Backblaze](https://secure.backblaze.com/r/01c40o) and [rsync.net](https://www.rsync.net/) for online backup,
+As far as online services go I use [Netlify](https://www.netlify.com) (at the moment) to host this site, [Hover](https://hover.com/U84GCox3) for domains, [Fastmail](https://www.fastmail.com/?STKI=14274077) for email, [yarr](https://github.com/nkanaev/yarr) manages my RSS feeds, and I use [Backblaze](https://secure.backblaze.com/r/01c40o) for online backup.
 
 [uses]: https://usesthis.com/
 [dotfiles]: https://github.com/asimpson/dotfiles/tree/master/emacs
