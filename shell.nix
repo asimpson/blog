@@ -7,6 +7,6 @@ pkgs.mkShell {
     pkgs.chroma
     cycle
     #nice to have http-server for testing
-    pkgs.nodejs_latest
+    pkgs.nodejs
   ];
 }
