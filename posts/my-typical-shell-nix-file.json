@@ -1,0 +1,8 @@
+{
+  "id": 175,
+  "published": "2026-03-21T19:59:02-04:00",
+  "title": "My typical shell.nix file",
+  "slug": "my-typical-shell-nix-file",
+  "modified": "2026-03-21T19:59:02-04:00",
+  "excerpt": "I use nix to manage packages on macOS and on Linux (nixOS). This is for my future self more than anything to document my \"ideal\" `shell.nix` file."
+}
